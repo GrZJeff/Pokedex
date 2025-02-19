@@ -36,7 +36,7 @@ def register():
 def update(user_id):
         try:
             data= user_schema.load(request.json)
-            user = user_model.update(Object(user_id), data)
+            user = user_model.update(ObjectId(user_id), data)
             return jsonify({
                 "data": user
             }, 200)
